@@ -136,20 +136,20 @@ namespace _01Tipusok
             Console.WriteLine("Szöveg1: {0}, Szöveg2: {1}", szoveg1, szoveg2);
             //Eredmény: Szöveg1: Módosított szöveg, Szöveg2: Eredeti szöveg // vagyis a string az értéktípusként VISELKEDIK
 
-            //Tehát ilyet ne csináljunk
-            var szoveg = "";
-            for (int i = 0; i < 10000000; i++)
-            {
-                szoveg = szoveg + "valami új";
-            }
+            ////Tehát ilyet ne csináljunk
+            //var szoveg = "";
+            //for (int i = 0; i < 10000000; i++)
+            //{
+            //    szoveg = szoveg + "valami új";
+            //}
 
-            var sb = new StringBuilder();
-            for (int i = 0; i < 10000000; i++)
-            {
-                sb.Append("valami új");
-            }
-            //Így todok az eredményhez hozzáférni
-            Console.WriteLine(sb.ToString()); 
+            //var sb = new StringBuilder();
+            //for (int i = 0; i < 10000000; i++)
+            //{
+            //    sb.Append("valami új");
+            //}
+            ////Így tudok az eredményhez hozzáférni
+            //Console.WriteLine(sb.ToString()); 
 
             Console.ReadKey();
         }
