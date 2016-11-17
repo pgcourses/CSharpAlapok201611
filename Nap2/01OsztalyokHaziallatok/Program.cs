@@ -39,6 +39,11 @@ namespace _01OsztalyokHaziallatok
 
             var lepes = 5;
             var ennyitLepett = 6;
+            //Alapértelmezés szerint a paraméter átadásának típusát (érték vagy referencia)
+            //a változó típusa dönti el. Értéktípusú változóknál érték szerint,
+            //referencia típusú változóknál referencia szerint történik az átadás. Ezt felül tudjuk
+            //bírálni a ref kulcsszóval.
+            //Az out kulcsszóval pedig egy speciális, csak kimeneti paramétert hozok létre.
             haziallat.LepjenEnnyit(ref lepes, out ennyitLepett);
             Console.WriteLine("Lépés: {0}", lepes);
 
