@@ -89,9 +89,6 @@ namespace _01GarbageCollector
                 Console.Write(GC.GetGeneration(korositando));
             }
 
-
-
-
             Console.ReadLine();
         }
     }
