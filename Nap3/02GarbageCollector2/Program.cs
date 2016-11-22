@@ -25,7 +25,7 @@ namespace _02GarbageCollector2
                 //Thread.Sleep(20);
                 //var bitmap = new Bitmap(1280,1024);
                 
-                //Így viszont nincs memóriapróbléma
+                //Így viszont nincs memóriaprobléma
                 using (var bitmap = new Bitmap(1280,1024)) { }
 
             }
