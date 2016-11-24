@@ -61,13 +61,14 @@ namespace _01IEnumerable
             //    MoveNext(pozicio: 6, vanMeg: False)
 
             //Ezt a kódot gyártja le a fordító
-            //var bejaro = lista.GetEnumerator();
-            //while (bejaro.MoveNext())
+            //using (var bejaro = lista.GetEnumerator())
             //{
-            //    var elem = bejaro.Current;
-            //    Console.WriteLine("----foreach elem: {0}", elem);
-
-            //    //elem feldolgozása
+                //while (bejaro.MoveNext())
+                //{
+                //    var elem = bejaro.Current;
+                //    Console.WriteLine("----foreach elem: {0}", elem);
+                //    //elem feldolgozása
+                //}
             //}
 
             Console.ReadLine();
