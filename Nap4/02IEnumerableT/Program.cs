@@ -26,6 +26,8 @@ namespace _02IEnumerableT
                 Console.WriteLine("Név: {0}, Szám: {1}", adat.Nev, adat.Szam);
             }
 
+            var a = adatok.Count();
+
             //Ha ezt futtatnám, akkor ez lenne az eredmény: 
             //Additional information: Collection was modified; enumeration operation may not execute.
 
