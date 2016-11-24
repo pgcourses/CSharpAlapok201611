@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02IEnumerableT", "02IEnumer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03Kivetelek", "03Kivetelek\03Kivetelek.csproj", "{81CFB75D-BC81-472F-932A-EEA339D21076}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04KivetelekTeljesitmenye", "04KivetelekTeljesitmenye\04KivetelekTeljesitmenye.csproj", "{2F3487D9-7AA9-410E-B11E-E1CE15D7EADD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{81CFB75D-BC81-472F-932A-EEA339D21076}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81CFB75D-BC81-472F-932A-EEA339D21076}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81CFB75D-BC81-472F-932A-EEA339D21076}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F3487D9-7AA9-410E-B11E-E1CE15D7EADD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F3487D9-7AA9-410E-B11E-E1CE15D7EADD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F3487D9-7AA9-410E-B11E-E1CE15D7EADD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F3487D9-7AA9-410E-B11E-E1CE15D7EADD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
