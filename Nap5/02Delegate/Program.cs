@@ -22,10 +22,48 @@ namespace _02Delegate
 
         static void Main(string[] args)
         {
-            ElsoDelegatePelda();
+            //ElsoDelegatePelda();
 
+            MasodikDelegatePelda();
             Console.ReadLine();
 
+        }
+
+        private static void MasodikDelegatePelda()
+        {
+            var modositoOsztaly = new ModositoOsztaly();
+
+            modositoOsztaly.Add("Első elem");
+            modositoOsztaly.Add("Második elem");
+            modositoOsztaly.Add("Harmadik elem");
+            modositoOsztaly.Add("Negyedik elem");
+            modositoOsztaly.Add("Ötödik elem");
+            modositoOsztaly.Add("Hatodik elem");
+
+            modositoOsztaly.ModositasElvegzese(VeddKiAzOBetuket);
+
+            ModositoOsztaly.fvDefinicio modositasok;
+
+            modositasok = VeddKiAzMBetuket;
+
+            modositasok += delegate (ref string szoveg)
+            {
+                szoveg = szoveg.Replace("k", "");
+            };
+
+            modositoOsztaly.ModositasElvegzese(modositasok);
+
+            modositoOsztaly.Tartalom();
+        }
+
+        private static void VeddKiAzMBetuket(ref string modositando)
+        {
+            modositando = modositando.Replace("m", "");
+        }
+
+        private static void VeddKiAzOBetuket(ref string modositando)
+        {
+            modositando = modositando.Replace("o", "");
         }
 
         private static void ElsoDelegatePelda()
@@ -62,6 +100,36 @@ namespace _02Delegate
         static void MasikFuggveny(string Valami)
         {
             Console.WriteLine("Másik Függvény: {0}", Valami);
+        }
+
+    }
+
+    internal class ModositoOsztaly
+    {
+        List<string> lista = new List<string>();
+        public delegate void fvDefinicio(ref string modositando);
+
+        public void ModositasElvegzese(fvDefinicio fvHivaslista)
+        {
+            for (int i = 0; i < lista.Count; i++)
+            {
+                var x = lista[i];
+                fvHivaslista(ref x);
+                lista[i] = x;
+            }
+        }
+
+        public void Add(string elem)
+        {
+            lista.Add(elem);
+        }
+
+        public void Tartalom()
+        {
+            foreach (var elem in lista)
+            {
+                Console.WriteLine(elem);
+            }
         }
 
     }
