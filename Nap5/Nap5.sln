@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01Log4Net", "01Log4Net\01Log4Net.csproj", "{7CC0E000-B581-4803-ADE3-6FC978F59588}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02Delegate", "02Delegate\02Delegate.csproj", "{135BFFB2-C662-4897-8AFB-63AE14153A43}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7CC0E000-B581-4803-ADE3-6FC978F59588}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CC0E000-B581-4803-ADE3-6FC978F59588}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CC0E000-B581-4803-ADE3-6FC978F59588}.Release|Any CPU.Build.0 = Release|Any CPU
+		{135BFFB2-C662-4897-8AFB-63AE14153A43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{135BFFB2-C662-4897-8AFB-63AE14153A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{135BFFB2-C662-4897-8AFB-63AE14153A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{135BFFB2-C662-4897-8AFB-63AE14153A43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
