@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _01Log4Net.Models;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -23,19 +24,34 @@ namespace _01Log4Net
 
             //Peldanaplo2();
 
+            Peldanaplo3();
+
+            //Így tudjuk elérni a CodeFirst adatbázisunkat
+            //using (var db = new Log4netContext())
+            //{
+            //    Console.WriteLine("bejegyzések száma: {0}", db.Logs.Count()); 
+            //}
+
+
+            Console.ReadLine();
+
+        }
+
+        private static void Peldanaplo3()
+        {
             var r = new Random();
 
             while (!Console.KeyAvailable)
             {
                 var level = r.Next(95);
 
-                if (level<50)
+                if (level < 50)
                 {
                     log.DebugFormat("Ez egy DEBUG üzenet: {0}", level);
                 }
 
                 if (level >= 50
-                    && level<70)
+                    && level < 70)
                 {
                     log.InfoFormat("Ez egy INFO üzenet: {0}", level);
                 }
@@ -70,13 +86,11 @@ namespace _01Log4Net
                 Thread.Sleep(200);
             }
 
-
-            Console.ReadLine();
-
         }
 
         private static void CurrentDomain_FirstChanceException(object sender, System.Runtime.ExceptionServices.FirstChanceExceptionEventArgs e)
         {
+
             log.Error("Hiba történt", e.Exception);
         }
 
