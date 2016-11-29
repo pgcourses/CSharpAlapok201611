@@ -37,3 +37,7 @@ Ha van csomagkezelőnk, a Visual Studio Community telepítése [adminisztrátori
 **cinst visualstudio2015community**
 
 Ezzel meg is vagyunk az előkészületekkel, a többit a tanfolyamon folytatjuk!
+
+#### 5. SQL szerver telepítése
+**cinst sql-server-express** (nagyjából 10 perc)
+
