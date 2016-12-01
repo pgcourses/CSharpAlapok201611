@@ -56,17 +56,14 @@ namespace _04EsemenyekMegoldas
 
         //A delegate definíció kiváltására a Func<> és az Action<> mintájára 
         //előre bekészített delegate definíció szolgál:
-        public event EventHandler<EsemenyDTO> MinuszbaMenne = null;
+        public event EventHandler<EsemenyDTO> MinuszbaMenne = delegate { };
 
         private bool OnMinuszbaMenne(int osszeg, int egyenlegElotte, int egyenlegUtana)
         {
             var dto = new EsemenyDTO(osszeg, egyenlegElotte, Egyenleg + osszeg);
             //Ertesíteni kell akit érint
-            var hvlista = MinuszbaMenne;
-            if (hvlista != null)
-            {
-                hvlista(this, dto);
-            }
+            //a delegate = { } definíció miatt nincs szükség null vizsgálatra
+            MinuszbaMenne(this, dto);
             return dto.MehetAJovairas;
         }
 
