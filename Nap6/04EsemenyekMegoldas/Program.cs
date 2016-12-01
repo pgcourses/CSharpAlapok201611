@@ -11,7 +11,7 @@ namespace _04EsemenyekMegoldas
         static void Main(string[] args)
         {
             var bszmla = new Bankszamla();
-            bszmla.ErtesitesiHivaslista += EsemenyKezelo;
+            bszmla.MinuszbaMenne += EsemenyKezelo;
 
             bszmla.Jovairas(1500);
             bszmla.Jovairas(3000);
@@ -56,7 +56,20 @@ namespace _04EsemenyekMegoldas
 
         //A delegate definíció kiváltására a Func<> és az Action<> mintájára 
         //előre bekészített delegate definíció szolgál:
-        public event EventHandler<EsemenyDTO> ErtesitesiHivaslista = null;
+        public event EventHandler<EsemenyDTO> MinuszbaMenne = null;
+
+        private bool OnMinuszbaMenne(int osszeg, int egyenlegElotte, int egyenlegUtana)
+        {
+            var dto = new EsemenyDTO(osszeg, egyenlegElotte, Egyenleg + osszeg);
+            //Ertesíteni kell akit érint
+            var hvlista = MinuszbaMenne;
+            if (hvlista != null)
+            {
+                hvlista(this, dto);
+            }
+            return dto.MehetAJovairas;
+        }
+
 
         public int Egyenleg { get; private set; }
 
@@ -73,17 +86,10 @@ namespace _04EsemenyekMegoldas
 
             if (Egyenleg + osszeg < 0)
             {
-                //Ertesíteni kell akit érint
-                var hvlista = ErtesitesiHivaslista;
-                if (hvlista != null)
+                if (OnMinuszbaMenne(osszeg, egyenlegElotte, Egyenleg + osszeg))
                 {
-                    var dto = new EsemenyDTO(osszeg, egyenlegElotte, Egyenleg+osszeg);
-                    hvlista(this, dto);
-                    if (dto.MehetAJovairas)
-                    {
-                        Egyenleg += osszeg;
-                        Console.WriteLine("Osszeg: {0}, Új egyenleg: {1}", osszeg, Egyenleg);
-                    }
+                    Egyenleg += osszeg;
+                    Console.WriteLine("Osszeg: {0}, Új egyenleg: {1}", osszeg, Egyenleg);
                 }
             }
             else
@@ -94,7 +100,7 @@ namespace _04EsemenyekMegoldas
         }
     }
 
-    public class EsemenyDTO
+    public class EsemenyDTO : EventArgs
     {
 
         public EsemenyDTO(int osszeg, int egyenlegElotte, int egyenlegUtana)
