@@ -46,6 +46,12 @@ namespace _02Delegate
         {
             PeldaDelegate hivaslista=null;
 
+            //feliratkozás
+            hivaslista += EgyFv;
+
+            //Így tudunk egy híváslistáról leiratkozni.
+            hivaslista -= EgyFv;
+
             //ez helyett:
             //if (hivaslista != null)
             //Lemásoljuk a híváslistát egy lokális változóba
@@ -59,8 +65,11 @@ namespace _02Delegate
             //ha valakinek VS2015 vagy azutáni környezete van, akkor c C# már ilyet is tud:
             //lista?.Invoke("paraméter");
 
+        }
 
-            hivaslista("ez egy példa");
+        private static void EgyFv(string uzenet)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
