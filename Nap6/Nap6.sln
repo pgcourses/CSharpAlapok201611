@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03Esemenyek", "03Esemenyek\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04EsemenyekMegoldas", "04EsemenyekMegoldas\04EsemenyekMegoldas.csproj", "{4AF35CDF-1B75-4F06-B8DF-5E310E7F2386}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05Allomanykezeles", "05Allomanykezeles\05Allomanykezeles.csproj", "{AE4AC4BB-26E4-48A5-B034-A711C1681E07}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{4AF35CDF-1B75-4F06-B8DF-5E310E7F2386}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AF35CDF-1B75-4F06-B8DF-5E310E7F2386}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AF35CDF-1B75-4F06-B8DF-5E310E7F2386}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE4AC4BB-26E4-48A5-B034-A711C1681E07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE4AC4BB-26E4-48A5-B034-A711C1681E07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE4AC4BB-26E4-48A5-B034-A711C1681E07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE4AC4BB-26E4-48A5-B034-A711C1681E07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
