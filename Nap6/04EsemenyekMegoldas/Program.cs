@@ -11,7 +11,7 @@ namespace _04EsemenyekMegoldas
         static void Main(string[] args)
         {
             var bszmla = new Bankszamla();
-            bszmla.ErtesitesiHivaslista += delegate { Console.WriteLine("Mínuszba ment a számla!"); };
+            bszmla.ErtesitesiHivaslista += EsemenyKezelo;
 
             bszmla.Jovairas(1500);
             bszmla.Jovairas(3000);
@@ -33,6 +33,14 @@ namespace _04EsemenyekMegoldas
             Console.ReadLine();
 
         }
+
+        private static void EsemenyKezelo(object sender, EsemenyDTO e)
+        {
+            e.MehetAJovairas = false;
+
+            Console.WriteLine("Mínuszba menne a számla! Egyenleg előtte: {0}, Jóváírandó összeg: {1}, Egyenleg utána: {2}",
+                e.EgyenlegElotte, e.JovairtOsszeg, e.EgyenlegUtana);
+        }
     }
 
     class Bankszamla
@@ -48,7 +56,7 @@ namespace _04EsemenyekMegoldas
 
         //A delegate definíció kiváltására a Func<> és az Action<> mintájára 
         //előre bekészített delegate definíció szolgál:
-        public event EventHandler ErtesitesiHivaslista = null;
+        public event EventHandler<EsemenyDTO> ErtesitesiHivaslista = null;
 
         public int Egyenleg { get; private set; }
 
@@ -61,18 +69,46 @@ namespace _04EsemenyekMegoldas
 
         public void Jovairas(int osszeg)
         {
-            Egyenleg += osszeg;
-            Console.WriteLine("Osszeg: {0}, Új egyenleg: {1}", osszeg, Egyenleg);
+            var egyenlegElotte = Egyenleg;
 
-            if (Egyenleg < 0)
+            if (Egyenleg + osszeg < 0)
             {
                 //Ertesíteni kell akit érint
                 var hvlista = ErtesitesiHivaslista;
                 if (hvlista != null)
                 {
-                    hvlista(this, EventArgs.Empty);
+                    var dto = new EsemenyDTO(osszeg, egyenlegElotte, Egyenleg+osszeg);
+                    hvlista(this, dto);
+                    if (dto.MehetAJovairas)
+                    {
+                        Egyenleg += osszeg;
+                        Console.WriteLine("Osszeg: {0}, Új egyenleg: {1}", osszeg, Egyenleg);
+                    }
                 }
             }
+            else
+            { //todo: ez ne legyen duplikálva
+                Egyenleg += osszeg;
+                Console.WriteLine("Osszeg: {0}, Új egyenleg: {1}", osszeg, Egyenleg);
+            }
         }
+    }
+
+    public class EsemenyDTO
+    {
+
+        public EsemenyDTO(int osszeg, int egyenlegElotte, int egyenlegUtana)
+        {
+            this.JovairtOsszeg = osszeg;
+            this.EgyenlegElotte = egyenlegElotte;
+            this.EgyenlegUtana = egyenlegUtana;
+            this.MehetAJovairas = true;
+        }
+
+        public int JovairtOsszeg { get; set; }
+        public int EgyenlegElotte { get; set; }
+        public int EgyenlegUtana { get; set; }
+
+        public bool MehetAJovairas { get; set; }
     }
 }
