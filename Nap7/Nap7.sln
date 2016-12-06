@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02StreamekStreamReader", "0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03SerializeDeserialize", "03SerializeDeserialize\03SerializeDeserialize.csproj", "{3915278A-9E2E-4847-BE4F-B054EDFCA10F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04FuncActionLambda", "04FuncActionLambda\04FuncActionLambda.csproj", "{ACB16C0C-4DD3-4FF6-8ECA-A52CFDDE2F03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3915278A-9E2E-4847-BE4F-B054EDFCA10F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3915278A-9E2E-4847-BE4F-B054EDFCA10F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3915278A-9E2E-4847-BE4F-B054EDFCA10F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACB16C0C-4DD3-4FF6-8ECA-A52CFDDE2F03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACB16C0C-4DD3-4FF6-8ECA-A52CFDDE2F03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACB16C0C-4DD3-4FF6-8ECA-A52CFDDE2F03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACB16C0C-4DD3-4FF6-8ECA-A52CFDDE2F03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
