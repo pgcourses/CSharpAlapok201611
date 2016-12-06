@@ -19,7 +19,15 @@ namespace _03SerializeDeserialize
                 Tizedestort = 12.728m,
                 Datum = DateTime.MaxValue,
                 DatumMin = DateTime.MinValue,
-                Szoveg = "ÁrvíztűrőTükörfúrógép"
+                Szoveg = "ÁrvíztűrőTükörfúrógép",
+                AlAdatOsztaly = new AlAdatOsztaly()
+                {
+                    Egesz = int.MinValue,
+                    Tizedestort = decimal.MinValue,
+                    Datum = DateTime.MaxValue,
+                    DatumMin = DateTime.MinValue,
+                    Szoveg = "ÁrvíztűrőTükörfúrógép"
+                }
             };
 
             var filenev = "teszt.txt";
@@ -41,6 +49,16 @@ namespace _03SerializeDeserialize
     }
 
     public class Adatosztaly
+    {
+        public int Egesz { get; set; }
+        public decimal Tizedestort { get; set; }
+        public DateTime Datum { get; set; }
+        public DateTime DatumMin { get; set; }
+        public string Szoveg { get; set; }
+        public AlAdatOsztaly AlAdatOsztaly { get; set; }
+    }
+
+    public class AlAdatOsztaly
     {
         public int Egesz { get; set; }
         public decimal Tizedestort { get; set; }
