@@ -13,6 +13,7 @@ namespace _03SerializeDeserialize
     {
         static void Main(string[] args)
         {
+
             var adat = new Adatosztaly()
             {
                 Egesz = int.MaxValue,
@@ -20,6 +21,7 @@ namespace _03SerializeDeserialize
                 Datum = DateTime.MaxValue,
                 DatumMin = DateTime.MinValue,
                 Szoveg = "ÁrvíztűrőTükörfúrógép",
+                Jelszo = "NagyonTitkosJelszó",
                 AlAdatOsztaly = new AlAdatOsztaly()
                 {
                     Egesz = int.MinValue,
@@ -30,13 +32,24 @@ namespace _03SerializeDeserialize
                 }
             };
 
+            var listaadat = new ListaAdat();
+
+            listaadat.ListaAdatok.Add(adat);
+            listaadat.ListaAdatok.Add(adat);
+            listaadat.ListaAdatok.Add(adat);
+            listaadat.ListaAdatok.Add(adat);
+            listaadat.ListaAdatok.Add(adat);
+            listaadat.ListaAdatok.Add(adat);
+
             var filenev = "teszt.txt";
 
-            var serializer = new XmlSerializer(typeof(Adatosztaly));
-
+            //var serializer = new XmlSerializer(typeof(Adatosztaly));
+            var serializer = new XmlSerializer(typeof(ListaAdat));
+            
             using (var fs = new FileStream(filenev, FileMode.Create))
             {
-                serializer.Serialize(fs, adat);
+                //serializer.Serialize(fs, adat);
+                serializer.Serialize(fs, listaadat);
             }
 
             using (var fs = new FileStream(filenev, FileMode.Open))
@@ -52,9 +65,12 @@ namespace _03SerializeDeserialize
     {
         public int Egesz { get; set; }
         public decimal Tizedestort { get; set; }
+        [XmlElement("EzIttEgyFurcsaPropertyNev")] //Az XML állományban így szerepel
         public DateTime Datum { get; set; }
         public DateTime DatumMin { get; set; }
         public string Szoveg { get; set; }
+        [XmlIgnore] //Ezzel lehet megoldani, hogy ez az adat ne szövegesítődjön
+        public string Jelszo { get; set; }
         public AlAdatOsztaly AlAdatOsztaly { get; set; }
     }
 
@@ -67,4 +83,13 @@ namespace _03SerializeDeserialize
         public string Szoveg { get; set; }
     }
 
+    public class ListaAdat
+    {
+        public ListaAdat()
+        {
+            ListaAdatok = new List<Adatosztaly>();
+        }
+
+        public List<Adatosztaly> ListaAdatok { get; set; }
+    }
 }
