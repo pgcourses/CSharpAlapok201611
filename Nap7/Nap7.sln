@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01StreamekBevezetés", "01StreamekBevezetés\01StreamekBevezetés.csproj", "{098F82F8-F35A-4A97-94DE-C639FAE65960}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02StreamekStreamReader", "02StreamekStreamReader\02StreamekStreamReader.csproj", "{DC59924D-F05B-4C32-A8D4-05FB814F5332}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03SerializeDeserialize", "03SerializeDeserialize\03SerializeDeserialize.csproj", "{3915278A-9E2E-4847-BE4F-B054EDFCA10F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{098F82F8-F35A-4A97-94DE-C639FAE65960}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{098F82F8-F35A-4A97-94DE-C639FAE65960}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{098F82F8-F35A-4A97-94DE-C639FAE65960}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC59924D-F05B-4C32-A8D4-05FB814F5332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC59924D-F05B-4C32-A8D4-05FB814F5332}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC59924D-F05B-4C32-A8D4-05FB814F5332}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC59924D-F05B-4C32-A8D4-05FB814F5332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3915278A-9E2E-4847-BE4F-B054EDFCA10F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3915278A-9E2E-4847-BE4F-B054EDFCA10F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3915278A-9E2E-4847-BE4F-B054EDFCA10F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3915278A-9E2E-4847-BE4F-B054EDFCA10F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
