@@ -28,13 +28,14 @@ namespace _01StreamekBevezetés
 
             using (var fs = new FileStream(filename, FileMode.Open, FileAccess.Read))
             {
-                var pufferSize = fs.Length;
+                //var pufferSize = fs.Length;
+                var pufferSize = 35;
                 byte[] puffer;
                 puffer = new byte[pufferSize];
 
                 var offset = 0;
                 var count = 0;
-                while ((count = fs.Read(puffer, offset, Math.Min((int)pufferSize, (int)fs.Length - offset)))>0)
+                while ((count = fs.Read(puffer, 0, (int)pufferSize))>0)
                 {
                     offset += count;
                     Console.WriteLine("Beolvasva: {0}, pozíció: {1}", count, offset);
