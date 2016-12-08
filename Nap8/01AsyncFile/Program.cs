@@ -25,7 +25,8 @@ namespace _01AsyncFile
             {
                 int pufferMeret = 90000;
                 byte[] puffer = new byte[pufferMeret];
-                AsyncCallback rekurzivCallback = null;
+                //A rekurzív híváshoz használunk egy lokális változót, amit létrehozunk, meghivatkozunk, beállítjuk, majd ezek után hívjuk a kódblokkot
+                AsyncCallback rekurzivCallback = null; 
                 AsyncCallback callback = ar=> 
                 {
                     var olvasottByteok = fs.EndRead(ar);
