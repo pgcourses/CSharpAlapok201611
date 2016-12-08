@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03AsyncFileHagyomanyosModon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04ThreadPools", "04ThreadPools\04ThreadPools.csproj", "{559D198E-4E12-4B12-881F-E9B020023F46}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05TaskokBevezetes", "04TaskokBevezetes\05TaskokBevezetes.csproj", "{4E5FB4E2-0241-42E4-8853-736FF789B92A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{559D198E-4E12-4B12-881F-E9B020023F46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{559D198E-4E12-4B12-881F-E9B020023F46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{559D198E-4E12-4B12-881F-E9B020023F46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E5FB4E2-0241-42E4-8853-736FF789B92A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E5FB4E2-0241-42E4-8853-736FF789B92A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E5FB4E2-0241-42E4-8853-736FF789B92A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E5FB4E2-0241-42E4-8853-736FF789B92A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
