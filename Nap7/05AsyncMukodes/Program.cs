@@ -117,6 +117,28 @@ namespace _05AsyncMukodes
             var ar06 = am.BeginInvoke(5, "Hatodik példa (aszinkron indítás 06)", MunkaVegeEredmennyel, am);
             Console.WriteLine("+Fő szál: Hatodik példa (aszinkron indítás 06) elindult");
 
+            //Az eredményhez való hozzáférés, AsyncState nélkül
+            var ar07 = am.BeginInvoke(4, "Hetedik példa (aszinkron indítás 07)"
+                ,ar => //Ez a formális paramétere a callback függvénynek, a lambda kifejezés baloldala
+                {
+                    var eredmeny = am.EndInvoke(ar); //A kódblokk hozzáfér a lokális változókhoz, így az am-hez is, ezért nem kell az átadásról gondoskodni
+                    Console.WriteLine("+Callback szál: Hetedik példa (aszinkron indítás 07) végzett, eredmény: {0}", eredmeny);
+                }
+                , null);
+            Console.WriteLine("+Fő szál: Hetedik példa (aszinkron indítás 07) elindult");
+
+
+            //Ugyanaz, mint előbb, csak a callback-et egy változóba tesszük
+
+            AsyncCallback callback = ar =>
+                    {
+                        var eredmeny = am.EndInvoke(ar);
+                        Console.WriteLine("+Callback szál: Nyolcadik példa (aszinkron indítás 08) végzett, eredmény: {0}", eredmeny);
+                    };
+
+            var ar08 = am.BeginInvoke(3, "Nyolcadik példa (aszinkron indítás 08)", callback, null);
+
+            Console.WriteLine("+Fő szál: Nyolcadik példa (aszinkron indítás 08) elindult");
 
             Console.ReadLine();
 
