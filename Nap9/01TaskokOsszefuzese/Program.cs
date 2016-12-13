@@ -55,24 +55,32 @@ namespace _01TaskokOsszefuzese
                 ti =>
                 {
                     Thread.Sleep(1500);
+//                    throw new Exception(); //Tudunk következmény taskot tenni minden task után, ld. a végén
                     return Szamolas("tkovetkezo1", ti.Result);
-                }
+                }, TaskContinuationOptions.OnlyOnRanToCompletion //Ezzel megadtam, hogy a tkovetkezo1 csak akkor fut, ha a tindulo nem dobott exception-t
             );
 
+            //Ez csak akkor fut, ha a tkovetkezo1 elszállt hibával.
+            var tex = tkovetkezo1.ContinueWith((ti) => { Console.WriteLine("******->HIBA TÖRTÉNT!!!"); },TaskContinuationOptions.OnlyOnFaulted);
+
+            var cts = new CancellationTokenSource();
+//            cts.Cancel();
             var tkovetkezo2 = tindulo.ContinueWith<int>(
                 ti =>
                 {
                     Thread.Sleep(1000);
+                    cts.Token.ThrowIfCancellationRequested();
                     return Szamolas("tkovetkezo2", ti.Result / 2);
-                }
+                } , cts.Token
             );
+            var tcancel = tkovetkezo2.ContinueWith((ti) => { Console.WriteLine("/////->CANCEL volt"); }, TaskContinuationOptions.OnlyOnCanceled);
 
             var tkovetkezo3 = tindulo.ContinueWith<int>(
                 ti =>
                 {
                     Thread.Sleep(500);
                     return Szamolas("tkovetkezo3", ti.Result * 2);
-                }
+                }, TaskContinuationOptions.OnlyOnRanToCompletion //Ezzel megadtam, hogy a tkovetkezo1 csak akkor fut, ha a tindulo nem dobott exception-t
             );
 
             var tlezaro = Task<int>.Factory.ContinueWhenAll(
@@ -91,6 +99,7 @@ namespace _01TaskokOsszefuzese
             tindulo.Start();
             //
             //ez nem kell: tlezaro.Wait(), mert lekérdezem a Result-ot és az megvárja a végét.
+
             Console.WriteLine("Eredmény: {0}", tlezaro.Result);
             Console.ReadLine();
         }
