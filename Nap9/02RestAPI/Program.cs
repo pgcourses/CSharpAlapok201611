@@ -7,6 +7,15 @@ using System.Threading.Tasks;
 
 namespace _02RestAPI
 {
+
+    /// <summary>
+    /// Figyelem, a bonyolultabb API-khoz általában jár kliens oldali könyvtár. Pl:
+    /// Stackoverflow: http://stackapps.com/questions/3411/stacman-net-client-for-stack-exchange-api-v2
+    /// PayPal: https://github.com/paypal/PayPal-NET-SDK
+    /// SendGrid: https://github.com/sendgrid/sendgrid-csharp
+    /// Facebook-hoz használható az ASP.NET MVC identity: https://www.asp.net/mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
+    /// </summary>
+
     class Program
     {
         static void Main(string[] args)
