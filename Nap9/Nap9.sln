@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01TaskokOsszefuzese", "01Ta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02RestAPI", "02RestAPI\02RestAPI.csproj", "{33371562-91B9-41EC-8F6A-803059EE3744}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03CodeFirstData", "03CodeFirstData\03CodeFirstData.csproj", "{6779721B-BC9E-4495-8663-7DAF71770226}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{33371562-91B9-41EC-8F6A-803059EE3744}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33371562-91B9-41EC-8F6A-803059EE3744}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33371562-91B9-41EC-8F6A-803059EE3744}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6779721B-BC9E-4495-8663-7DAF71770226}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6779721B-BC9E-4495-8663-7DAF71770226}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6779721B-BC9E-4495-8663-7DAF71770226}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6779721B-BC9E-4495-8663-7DAF71770226}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
