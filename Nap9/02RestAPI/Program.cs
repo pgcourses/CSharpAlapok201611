@@ -14,6 +14,7 @@ namespace _02RestAPI
     /// PayPal: https://github.com/paypal/PayPal-NET-SDK
     /// SendGrid: https://github.com/sendgrid/sendgrid-csharp
     /// Facebook-hoz használható az ASP.NET MVC identity: https://www.asp.net/mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
+    /// GitHub API: https://api.github.com/
     /// </summary>
 
     class Program
