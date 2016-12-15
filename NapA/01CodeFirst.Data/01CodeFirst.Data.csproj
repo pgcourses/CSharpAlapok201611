@@ -52,7 +52,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201612151728350_Add teacher table.cs" />
+    <Compile Include="Migrations\201612151728350_Add teacher table.Designer.cs">
+      <DependentUpon>201612151728350_Add teacher table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612151736289_add Subject table.cs" />
+    <Compile Include="Migrations\201612151736289_add Subject table.Designer.cs">
+      <DependentUpon>201612151736289_add Subject table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612151739208_add connection Teacher-to-Subject.cs" />
+    <Compile Include="Migrations\201612151739208_add connection Teacher-to-Subject.Designer.cs">
+      <DependentUpon>201612151739208_add connection Teacher-to-Subject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612151810086_set Subject to required.cs" />
+    <Compile Include="Migrations\201612151810086_set Subject to required.Designer.cs">
+      <DependentUpon>201612151810086_set Subject to required.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612151817030_Add Student table amd connection to teacher.cs" />
+    <Compile Include="Migrations\201612151817030_Add Student table amd connection to teacher.Designer.cs">
+      <DependentUpon>201612151817030_Add Student table amd connection to teacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\SchoolContext.cs" />
+    <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\Subject.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,6 +83,23 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201612151728350_Add teacher table.resx">
+      <DependentUpon>201612151728350_Add teacher table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612151736289_add Subject table.resx">
+      <DependentUpon>201612151736289_add Subject table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612151739208_add connection Teacher-to-Subject.resx">
+      <DependentUpon>201612151739208_add connection Teacher-to-Subject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612151810086_set Subject to required.resx">
+      <DependentUpon>201612151810086_set Subject to required.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612151817030_Add Student table amd connection to teacher.resx">
+      <DependentUpon>201612151817030_Add Student table amd connection to teacher.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

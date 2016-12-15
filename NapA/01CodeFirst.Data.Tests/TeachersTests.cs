@@ -18,7 +18,7 @@ namespace _01CodeFirst.Data.Tests
             var count = db.Teachers.Count();
 
             //Assert
-            Assert.AreEqual(0, count);
+            Assert.AreEqual(2, count);
         }
 
         [TestMethod]
