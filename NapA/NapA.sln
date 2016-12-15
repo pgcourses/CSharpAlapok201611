@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01CodeFirst.Data.Tests", "0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04DataFirst", "04DataFirst\04DataFirst.csproj", "{ADD6FA67-DA13-46CE-A146-365F7644BB9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05AdoNet.Data", "05AdoNet.Data\05AdoNet.Data.csproj", "{ABACAE72-26B2-435C-A597-734F70548B29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05AdoNet.Data.Tests", "05AdoNet.Data.Tests\05AdoNet.Data.Tests.csproj", "{296F5029-54DC-487A-972F-DC10326882CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{ADD6FA67-DA13-46CE-A146-365F7644BB9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADD6FA67-DA13-46CE-A146-365F7644BB9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADD6FA67-DA13-46CE-A146-365F7644BB9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABACAE72-26B2-435C-A597-734F70548B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABACAE72-26B2-435C-A597-734F70548B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABACAE72-26B2-435C-A597-734F70548B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABACAE72-26B2-435C-A597-734F70548B29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{296F5029-54DC-487A-972F-DC10326882CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{296F5029-54DC-487A-972F-DC10326882CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{296F5029-54DC-487A-972F-DC10326882CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{296F5029-54DC-487A-972F-DC10326882CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
