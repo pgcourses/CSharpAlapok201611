@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 /// https://coding.abel.nu/2012/02/using-entity-framework-to-create-a-database/
 /// http://thedatafarm.com/?s=code+first
 /// https://blog.oneunicorn.com/tag/code-first/
-/// http://www.entityframeworktutorial.net/code-first
+/// http://www.entityframeworktutorial.net/code-first/entity-framework-code-first.aspx
 /// </summary>
 
 
