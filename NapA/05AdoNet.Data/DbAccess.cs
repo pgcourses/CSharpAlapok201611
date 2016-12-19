@@ -93,6 +93,7 @@ namespace _05AdoNet.Data
                         ,FirstName = reader.GetString(reader.GetOrdinal("FirstName"))
                         ,LastName = reader.GetString(reader.GetOrdinal("LastName"))
                         ,ClassCode = reader.GetString(reader.GetOrdinal("ClassCode"))
+                        ,Subject_Id = reader.GetInt32(reader.GetOrdinal("Subject_Id"))
                     };
 
                     //és ezzel visszatérünk

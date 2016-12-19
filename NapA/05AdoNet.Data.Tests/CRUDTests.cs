@@ -20,6 +20,23 @@ namespace _05AdoNet.Data.Tests
             //Assert
             Assert.AreEqual(2, teachers.Count);
 
+            //1   Forgó Morgó   2 / A 1
+            //2   Gipsz Jakab   1 / A 2
+
+            var teacher = teachers[0];
+            Assert.AreEqual(1, teacher.Id);
+            Assert.AreEqual("Forgó", teacher.FirstName);
+            Assert.AreEqual("Morgó", teacher.LastName);
+            Assert.AreEqual("2/A", teacher.ClassCode);
+            Assert.AreEqual(1, teacher.Subject_Id);
+
+            teacher = teachers[1];
+            Assert.AreEqual(2, teacher.Id);
+            Assert.AreEqual("Gipsz", teacher.FirstName);
+            Assert.AreEqual("Jakab", teacher.LastName);
+            Assert.AreEqual("1/A", teacher.ClassCode);
+            Assert.AreEqual(2, teacher.Subject_Id);
+
         }
 
 
