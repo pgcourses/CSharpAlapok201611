@@ -83,6 +83,45 @@ namespace _05AdoNet.Data.Tests
         [TestMethod]
         public void TeacherUpdate()
         {
+            //Arrange
+            var db = new DbAccess();
+            var teacher = db.ReadTeacher(1);
+            //1   Forgó Morgó   2 / A 1
+            teacher.FirstName = "Teszt1";
+            teacher.LastName = "Teszt2";
+            teacher.ClassCode = "8/C";
+            teacher.Subject_Id = 2;
+
+
+            //Act
+            var updatedTeachers = db.UpdateTeacher(teacher);
+
+            //Assert
+            Assert.AreEqual(1, updatedTeachers);
+
+            var teacherSaved = db.ReadTeacher(1);
+            Assert.AreEqual(teacher.FirstName, teacherSaved.FirstName);
+            Assert.AreEqual(teacher.LastName, teacherSaved.LastName);
+            Assert.AreEqual(teacher.ClassCode, teacherSaved.ClassCode);
+            Assert.AreEqual(teacher.Subject_Id, teacherSaved.Subject_Id);
+
+            //TearDown
+            //1   Forgó Morgó   2 / A 1
+            teacher.FirstName = "Forgó";
+            teacher.LastName = "Morgó";
+            teacher.ClassCode = "2/A";
+            teacher.Subject_Id = 1;
+
+            updatedTeachers = db.UpdateTeacher(teacher);
+
+            Assert.AreEqual(1, updatedTeachers);
+            teacherSaved = db.ReadTeacher(1);
+            Assert.AreEqual(teacher.FirstName, teacherSaved.FirstName);
+            Assert.AreEqual(teacher.LastName, teacherSaved.LastName);
+            Assert.AreEqual(teacher.ClassCode, teacherSaved.ClassCode);
+            Assert.AreEqual(teacher.Subject_Id, teacherSaved.Subject_Id);
+
+
 
         }
 

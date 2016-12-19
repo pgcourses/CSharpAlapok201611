@@ -103,6 +103,26 @@ namespace _05AdoNet.Data
 
         }
 
+        public int UpdateTeacher(Teacher teacher)
+        {
+            using (var con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                using (var cmd = new SqlCommand("UPDATE Teachers SET FirstName=@FirstName, LastName=@LastName, ClassCode=@ClassCode, Subject_Id=@Subject_Id WHERE Id = @Id", con))
+                {
+                    cmd.Parameters.Add("@Id", SqlDbType.NVarChar, -1).Value = teacher.Id;
+                    cmd.Parameters.Add("@FirstName", SqlDbType.NVarChar, -1).Value = teacher.FirstName;
+                    cmd.Parameters.Add("@LastName", SqlDbType.NVarChar, -1).Value = teacher.LastName;
+                    cmd.Parameters.Add("@ClassCode", SqlDbType.NVarChar, -1).Value = teacher.ClassCode;
+                    cmd.Parameters.Add("@Subject_Id", SqlDbType.Int).Value = teacher.Subject_Id;
+
+                    //lefuttatjuk a parancsunkat ami visszatér az érintett sorok számával
+                    var affectedRows = cmd.ExecuteNonQuery();
+                    return affectedRows;
+                }
+            }
+        }
+
         public int CreateTeacher(Teacher teacher)
         {
             using (var con = new SqlConnection(connectionString))
